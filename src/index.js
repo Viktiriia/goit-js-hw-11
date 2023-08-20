@@ -34,9 +34,7 @@ function onSearch(element) {
     return;
   }
 
-  isShown = 0;
   fetchGallery();
-  onRenderGallery(hits);
 }
 
 function onLoadMore() {

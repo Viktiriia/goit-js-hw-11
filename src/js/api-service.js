@@ -20,6 +20,7 @@ export default class NewsApiService {
         per_page: `${this.PER_PAGE}`,
       },
     };
+
     try {
       const response = await axios(axiosOptions);
 
@@ -28,7 +29,9 @@ export default class NewsApiService {
       this.incrementPage();
       return data;
     } catch (error) {
-      console.error(error);
+      Notify.failure(
+        `Sorry, there are no images matching your search query. Please try again.`
+      );
     }
   }
 
